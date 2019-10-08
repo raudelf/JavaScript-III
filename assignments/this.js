@@ -3,25 +3,27 @@
 *
 * 1. When the function is contained in the global scope,
     the value of the inside function will be the window object.
-* 2. 
+* 2. When a function is called before a dot(.), the object before the dot is "this".
 * 3. 
 * 4. 
 *
 * write out a code example of each explanation above
-*/scopes = scope => {
+*/
+
+// Principle 1
+
+// code example for Window Binding
+scopes = scope => {
     console.log(this);
     return `When the function is contained in the ${scope} scope,
     the value of the inside function will be the window object.`;
 }
 console.log(scopes('Global'));
 
-// Principle 1
-
-// code example for Window Binding
-
 // Principle 2
 
 // code example for Implicit Binding
+
 
 // Principle 3
 

@@ -1,12 +1,16 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. When the function is contained in the global scope,
+* 1.Window/Global Obj Binding:
+    When the function is contained in the global scope,
     the value of the inside function will be the window object.
 
-* 2. When a function is called before a dot(.), the object before the dot is "this".
+* 2.Implicit Binding: 
+    When a function is called before a dot(.), the object before the dot is "this".
 
-* 3. 
+* 3.New Binding: 
+    In constructor functions, "this" shows us when an object that is created and
+    returned by the constructor function.
 * 4. 
 *
 * write out a code example of each explanation above
@@ -38,6 +42,17 @@ console.log(favFood.food('Tacos'));
 // Principle 3
 
 // code example for New Binding
+function AskMe(name) {
+    this.name = name;
+    this.ask = function() {
+        console.log(`Hey ${this.name}, would you like to dance with me? `);
+        console.log(this);
+    }
+};
+
+let gabbi = new AskMe('Gabbi');
+
+gabbi.ask();
 
 // Principle 4
 

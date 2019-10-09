@@ -3,7 +3,9 @@
 *
 * 1. When the function is contained in the global scope,
     the value of the inside function will be the window object.
+
 * 2. When a function is called before a dot(.), the object before the dot is "this".
+
 * 3. 
 * 4. 
 *
@@ -23,6 +25,14 @@ console.log(scopes('Global'));
 // Principle 2
 
 // code example for Implicit Binding
+let favFood = {
+    opening: `My favorite food`,
+    food: function(name) {
+        console.log(`${this.opening} is ${name}`);
+        console.log(this);
+    }
+};
+console.log(favFood.food('Tacos'));
 
 
 // Principle 3

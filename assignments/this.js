@@ -11,7 +11,9 @@
 * 3.New Binding: 
     In constructor functions, "this" shows us when an object that is created and
     returned by the constructor function.
-* 4. 
+
+* 4.Explicit Binding:
+    When the "call" & "apply" methods are used, "this" becomes clearly defined.
 *
 * write out a code example of each explanation above
 */
@@ -51,9 +53,13 @@ function AskMe(name) {
 };
 
 let gabbi = new AskMe('Gabbi');
+let juan = new AskMe('Juan');
 
 gabbi.ask();
+juan.ask();
 
 // Principle 4
 
 // code example for Explicit Binding
+gabbi.ask.call(juan);
+juan.ask.apply(gabbi);
